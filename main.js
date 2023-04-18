@@ -245,15 +245,19 @@ const targetApp= document.querySelector("#app")
 let domString=""
 for (const pet of pets){
   domString += 
-  `<div class="card" style="width: 25%;">
-  <img src=${pet.imageUrl} class="card-img-top" alt="${pet.name}">
-  <div class="card-body">
-    <h5 class="card-title">${pet.name} </h5>
-    <p>Type: ${pet.type} </p>
-    <p>Color: ${pet.color}</p>
-    <p class="card-text">Special skill: ${pet.specialSkill} </p>
-  </div>
-</div>`
+  `<div class="card" style=width:25rem;">
+    <div class="title">
+      <h5 class="card-title">${pet.name} </h5>
+    </div>
+    <div class="card-body">
+      <div class="img-div">
+        <img src=${pet.imageUrl} class="card-img-top" alt="${pet.name}">
+      </div>
+      <p>${pet.color}</p>
+      <p class="card-text">${pet.specialSkill} </p>
+    </div>
+    <footer class="${pet.type}"><p>Type: ${pet.type} </p></footer>
+  </div>`
 }
 console.log(domString);
 targetApp.innerHTML=domString
