@@ -35,21 +35,21 @@ footer{
   justify-content: center;
 }
 
-.cat{
+.cat-footer{
   border: solid lightgray 1px;
   background-color: lightblue;
   color: blue;
   font-size: 25px;
 }
 
-.dog{
+.dog-footer{
   border: lightyellow gr 1px;
   background-color: lightyellow;
   color: greenyellow;
   font-size: 25px;
 }
 
-.dino{
+.dino-footer{
   border: solid lightgreen 1px;
   background-color: lightgreen;
   color: green;
