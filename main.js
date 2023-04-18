@@ -245,7 +245,7 @@ const targetApp= document.querySelector("#app")
 let domString=""
 for (const pet of pets){
   domString += 
-  `<div class="card" style=width:25rem;">
+  `<div class="${pet.type} card" style=width:25rem;">
     <div class="title">
       <h5 class="card-title">${pet.name} </h5>
     </div>
@@ -256,8 +256,72 @@ for (const pet of pets){
       <p>${pet.color}</p>
       <p class="card-text">${pet.specialSkill} </p>
     </div>
-    <footer class="${pet.type}"><p>${pet.type} </p></footer>
+    <footer class="${pet.type}-footer"><p>${pet.type} </p></footer>
   </div>`
 }
-console.log(domString);
 targetApp.innerHTML=domString
+
+const catCards=document.getElementsByClassName("cat")
+const dogCards=document.getElementsByClassName("dog")
+const dinoCards=document.getElementsByClassName("dino")
+
+function displayCat() {
+  console.log("btn works");
+  Array.from(dogCards).forEach((x) => {
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  })
+  Array.from(dinoCards).forEach((x) => {
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  })
+}
+    
+function displayDog() {
+  console.log("btn works");
+  Array.from(catCards).forEach((x) => {
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  })
+  Array.from(dinoCards).forEach((x) => {
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  })
+}
+
+function displayDino() {
+  console.log("btn works");
+  Array.from(catCards).forEach((x) => {
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  })
+  Array.from(dogCards).forEach((x) => {
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  })
+}
+
+
+
+document.getElementById("catBtn").addEventListener("click",displayCat)
+document.getElementById("dogBtn").addEventListener("click",displayDog)
+document.getElementById("dinoBtn").addEventListener("click",displayDino)
+  
