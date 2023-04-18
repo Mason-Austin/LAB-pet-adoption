@@ -281,6 +281,11 @@ function displayCat() {
       x.style.display = "none";
     }
   })
+  Array.from(catCards).forEach((x) => {
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+  })
 }
     
 function displayDog() {
@@ -299,6 +304,11 @@ function displayDog() {
       x.style.display = "none";
     }
   })
+  Array.from(dogCards).forEach((x) => {
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
+  })
 }
 
 function displayDino() {
@@ -316,6 +326,11 @@ function displayDino() {
     } else {
       x.style.display = "none";
     }
+  })
+  Array.from(dinoCards).forEach((x) => {
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } 
   })
 }
 
