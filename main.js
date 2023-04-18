@@ -256,7 +256,7 @@ for (const pet of pets){
       <p>${pet.color}</p>
       <p class="card-text">${pet.specialSkill} </p>
     </div>
-    <footer class="${pet.type}"><p>Type: ${pet.type} </p></footer>
+    <footer class="${pet.type}"><p>${pet.type} </p></footer>
   </div>`
 }
 console.log(domString);
