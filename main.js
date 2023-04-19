@@ -241,102 +241,66 @@ const pets = [
     }
   ];
 
-const targetApp= document.querySelector("#app")
-let domString=""
-for (const pet of pets){
-  domString += 
-  `<div class="${pet.type} card" style=width:25rem;">
-    <div class="title">
-      <h5 class="card-title">${pet.name} </h5>
-    </div>
-    <div class="card-body">
-      <div class="img-div">
-        <img src=${pet.imageUrl} class="card-img-top" alt="${pet.name}">
+const renderToDoom = (divID, htmlToRender) =>{
+  const selectedDiv= document.getElementById(divID)
+  selectedDiv.innerHTML=htmlToRender
+}
+
+const cardOnDom = (array) =>{
+  let domString=""
+  for (const pet of array) {
+    domString+= `
+    <div class="card" style="width: 27rem;">
+      <div class="title">
+        <h4>${pet.name}</h4>
       </div>
-      <p>${pet.color}</p>
+      <div class="img-div">
+        <img src=${pet.imageUrl} class="card-img-top" alt=${pet.name}>
+      </div>
+    <div class="card-body">
+    <p class="card-text" >${pet.color}</p>
       <p class="card-text">${pet.specialSkill} </p>
     </div>
     <footer class="${pet.type}-footer"><p>${pet.type} </p></footer>
   </div>`
-}
-targetApp.innerHTML=domString
 
-const catCards=document.getElementsByClassName("cat")
-const dogCards=document.getElementsByClassName("dog")
-const dinoCards=document.getElementsByClassName("dino")
-
-function displayCat() {
-  console.log("btn works");
-  Array.from(dogCards).forEach((x) => {
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  })
-  Array.from(dinoCards).forEach((x) => {
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  })
-  Array.from(catCards).forEach((x) => {
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } 
-  })
+  renderToDoom("app", domString)
+  }
 }
+
+const filter = (array, typeString) =>{
+  const typeArray=[]
+  for (const pet of array) {
+    if (pet.type===typeString) {
+      typeArray.push(pet)
     
-function displayDog() {
-  console.log("btn works");
-  Array.from(catCards).forEach((x) => {
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
     }
-  })
-  Array.from(dinoCards).forEach((x) => {
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  })
-  Array.from(dogCards).forEach((x) => {
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } 
-  })
+  }
+  return typeArray;
 }
 
-function displayDino() {
-  console.log("btn works");
-  Array.from(catCards).forEach((x) => {
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  })
-  Array.from(dogCards).forEach((x) => {
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  })
-  Array.from(dinoCards).forEach((x) => {
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } 
-  })
-}
+cardOnDom(pets);
 
+const showAllButton = document.getElementById("allBtn");
+const showCatButton = document.getElementById("catBtn");
+const showDogButton = document.getElementById("dogBtn");
+const showDinoButton= document.getElementById("dinoBtn");
 
+showAllButton.addEventListener('click', ()=>{
+  cardOnDom(pets)
+})
 
-document.getElementById("catBtn").addEventListener("click",displayCat)
-document.getElementById("dogBtn").addEventListener("click",displayDog)
-document.getElementById("dinoBtn").addEventListener("click",displayDino)
-  
+showCatButton.addEventListener("click", ()=>{
+  const catCards = filter(pets,"cat");
+  cardOnDom(catCards)
+})
+
+showDinoButton.addEventListener("click", ()=>{
+  const dinoCards= filter(pets,"dino")
+  cardOnDom(dinoCards)
+})
+
+showDogButton.addEventListener('click', ()=>{
+  const dogCards=filter(pets,"dog")
+  cardOnDom(dogCards)
+})
