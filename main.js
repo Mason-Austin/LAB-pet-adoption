@@ -260,6 +260,7 @@ const cardOnDom = (array) =>{
     <div class="card-body">
     <p class="card-text" >${pet.color}</p>
       <p class="card-text">${pet.specialSkill} </p>
+      <button class="btn btn-danger" id="delete--${pet.id}" >Delete</button>
     </div>
     <footer class="${pet.type}-footer"><p>${pet.type} </p></footer>
   </div>`
@@ -278,8 +279,6 @@ const filter = (array, typeString) =>{
   }
   return typeArray;
 }
-
-cardOnDom(pets);
 
 const showAllButton = document.getElementById("allBtn");
 const showCatButton = document.getElementById("catBtn");
@@ -324,3 +323,26 @@ const createPet = (e) => {
 }
 
 form.addEventListener("submit", createPet);
+
+const app = document.getElementById("app")
+
+
+app.addEventListener('click', (e) =>{
+  if (e.target.id.includes("delete")) {
+    const [,id]=e.target.id.split("--")
+
+    const index = pets.findIndex(pet => pet.id===Number(id))
+
+    pets.splice(index, 1);
+
+    cardOnDom(pets)
+  }
+})
+
+const startApp = () => {
+  cardOnDom(pets);
+}
+
+
+
+startApp();
