@@ -314,8 +314,8 @@ const createPet = (e) => {
       name: document.querySelector("#name").value,
       color: document.querySelector("#color").value,
       specialSkill: document.querySelector("#skill").value,
-      type: document.querySelector("#type").value,
-      imageUrl: document.querySelector("#image").value
+      imageUrl: document.querySelector("#image").value,
+      type: document.querySelector('input[name="inlineRadioOptions"]:checked').value
   }
   pets.push(newPetObj);
   cardOnDom(pets);
@@ -338,6 +338,8 @@ app.addEventListener('click', (e) =>{
     cardOnDom(pets)
   }
 })
+
+
 
 const startApp = () => {
   cardOnDom(pets);
