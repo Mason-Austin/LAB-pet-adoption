@@ -246,11 +246,17 @@ const renderToDoom = (divID, htmlToRender) =>{
   selectedDiv.innerHTML=htmlToRender
 }
 
+let capitalize= (type) =>{
+  const lower = type.toLowerCase()
+  return type.charAt(0).toUpperCase()+lower.slice(1)
+}
+
 const cardOnDom = (array) =>{
   let domString=""
   for (const pet of array) {
+    let petType=capitalize(pet.type)
     domString+= `
-    <div class="card" style="width: 27rem;">
+    <div class="card ${pet.type}" style="width: 27rem;">
       <div class="title">
         <h4>${pet.name}</h4>
       </div>
@@ -262,7 +268,7 @@ const cardOnDom = (array) =>{
       <p class="card-text">${pet.specialSkill} </p>
       <button class="btn btn-danger" id="delete--${pet.id}" >Delete</button>
     </div>
-    <footer class="${pet.type}-footer"><p>${pet.type} </p></footer>
+    <footer><p>${petType}</p></footer>
   </div>`
 
   renderToDoom("app", domString)
