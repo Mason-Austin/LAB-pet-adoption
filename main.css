@@ -12,7 +12,7 @@ body{
   height: auto;
 }
 
-.title{
+.title,footer{
   background-color: lightgray;
   height: 60px;
   display: flex;
@@ -29,27 +29,21 @@ body{
   padding: 2%;
 }
 
-footer{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.cat-footer{
+.cat{
   border: solid lightgray 1px;
   background-color: lightblue;
   color: blue;
   font-size: 25px;
 }
 
-.dog-footer{
+.dog{
   border: lightyellow gr 1px;
   background-color: lightyellow;
   color: greenyellow;
   font-size: 25px;
 }
 
-.dino-footer{
+.dino{
   border: solid lightgreen 1px;
   background-color: lightgreen;
   color: green;
