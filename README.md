@@ -2,7 +2,7 @@
 
 Here I am putting an overview of what my project is about. It comes below the name of my project so that others can read what it is about and get more details.
 
-masons-pet-adoption.netlify.app
+[View App](https://masons-pet-adoption.netlify.app/)
 
 ## About the User <!-- This is a scaled down user persona -->
 - The ideal user for this application is a animal adoption center
@@ -20,4 +20,4 @@ masons-pet-adoption.netlify.app
 <img width="1148" alt="Your Alt" src="your-link.png">
 
 ## Contributors
-- [Mason Austin](https://github.com/your-github-url)
+- [Mason Austin](https://github.com/Mason-Austin)
