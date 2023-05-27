@@ -16,7 +16,8 @@ This project just allows the user to have a list of pets and what makes them uni
 - [Check out the deployed site](https://masons-pet-adoption.netlify.app/)
 
 ## Project Screenshots <!-- These can be inside of your project. Look at the repos from class and see how the images are included in the readme -->
-src="![image](https://github.com/Mason-Austin/LAB-pet-adoption/assets/122314974/0ebddf76-4dfd-4407-b3d1-dce390d5d9f4)"
+![image](https://github.com/Mason-Austin/LAB-pet-adoption/assets/122314974/61ab1458-5bda-4dc9-a01f-dda12bc589bb)
+
 
 
 
