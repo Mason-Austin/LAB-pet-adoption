@@ -11,3 +11,5 @@ As a developer this project focuses on the concept of dynamically rendering code
 The user for this website would be for a buiness that help pets find permanent homes. This allows them to have a website that showcases each pet and whats special about each one. The website also allows the user to create or delete pets incase they get a new pet, or one gets adopted.
 
 ![image](https://github.com/Mason-Austin/LAB-pet-adoption/assets/122314974/e128903f-5d69-44ef-81af-be195eef9363)
+
+![image](https://github.com/Mason-Austin/LAB-pet-adoption/assets/122314974/d1ae44ef-8778-4fa9-9c75-c069e5c4651d)
